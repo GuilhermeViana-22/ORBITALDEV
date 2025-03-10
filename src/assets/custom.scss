@@ -1,0 +1,17 @@
+/* src/assets/css/styles.scss */
+
+/* Definindo algumas cores */
+$color-banner-regal-dark: #101229;
+$color-banner-light-dark: #161722;
+
+:root {
+  /* Definindo as variáveis CSS usando as variáveis SCSS */
+  --color-banner-regal-dark: #{$color-banner-regal-dark};
+  --color-banner-light-dark: #{$color-banner-light-dark};
+}
+
+@layer base {
+  .bg-banner {
+    background-color: var(--color-banner-regal-dark);
+  }
+}

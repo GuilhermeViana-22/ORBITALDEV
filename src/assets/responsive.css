@@ -1,0 +1,54 @@
+
+
+
+/* Extra pequeno (até 199px) */
+@media (max-width: 199px) {
+    body {
+        background-color: red;
+    }
+    input{
+      margin-top: 20px;
+    }
+  }
+  
+  /* Pequeno (200px até 399px) */
+  @media (min-width: 200px) and (max-width: 399px) {
+    body {
+        background-color: orange;
+    }
+    input{
+      margin-top: 20px;
+    }
+  }
+  
+  /* Médio (400px até 599px) */
+  @media (min-width: 400px) and (max-width: 599px) {
+    body {
+        background-color: yellow;
+    }
+    input{
+      margin-top: 20px;
+    }
+    input{
+      margin-top: 20px;
+    }
+  }
+  
+  /* Grande (600px até 799px) */
+  @media (min-width: 600px) and (max-width: 799px) {
+    body {
+        background-color: green;
+    }
+    input{
+      margin-top: 20px;
+    }
+  }
+  
+  /* Extra grande (800px até 900px) */
+  @media (min-width: 800px) and (max-width: 900px) {
+    body {
+        background-color: blue;
+    }
+  
+  }
+  

@@ -1,0 +1,299 @@
+/* Importando a fonte Geissains */
+@import url('https://fonts.googleapis.com/css2?family=Geissains:wght@400;700&display=swap');
+
+/* Link da Geissains */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Geissains';
+  src: url('fonts/geissains.woff2') format('woff2'),
+    url('fonts/geissains.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geissains';
+  src: url('fonts/geissains-bold.woff2') format('woff2'),
+    url('fonts/geissains-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Definindo as variáveis para cores */
+:root {
+  --primary-bg-dark: #12141a;
+  --primary-bg-light: #ffffff;
+
+  --primary-text-dark: #ffffff;
+  --primary-text-light: #12141a;
+
+  --secondary-color-dark: #2e8b57;
+  /* Verde */
+  --secondary-color-light: #32a852;
+  /* Verde claro */
+
+  --accent-color-dark: #1e90ff;
+  /* Azul */
+  --accent-color-light: #4682b4;
+  /* Azul mais suave */
+
+  --banner-overlay-dark: rgba(0, 0, 0, 0.5);
+  --banner-overlay-light: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Estilos globais */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--primary-bg-dark);
+  color: var(--primary-text-dark);
+  font-family: 'Geissains', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo claro */
+[data-theme="light"] {
+  --primary-bg-dark: var(--primary-bg-light);
+  --primary-text-dark: var(--primary-text-light);
+  --secondary-color-dark: var(--secondary-color-light);
+  --accent-color-dark: var(--accent-color-light);
+  --banner-overlay-dark: var(--banner-overlay-light);
+
+  background-color: var(--primary-bg-dark);
+  color: var(--primary-text-dark);
+}
+
+.gradient-color {
+  background: linear-gradient(45deg, #42b883, #35495e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50vh);
+  background-color: #12141a;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  /* Ativa o Flexbox */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+
+.mouse-glow {
+  position: absolute;
+  /* Permite que o efeito ocorra dentro da .banner */
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(50, 168, 82, 0.5) 0%, rgba(50, 168, 82, 0) 80%);
+  filter: blur(50px);
+  pointer-events: none;
+  /* Não interfere nos cliques */
+  transition: transform 0.05s linear;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+  /* Limite de exibição dentro da .banner */
+  top: 0;
+  left: 0;
+}
+
+
+/* Banner principal */
+.banner-text {
+  color: var(--primary-text-dark);
+  font-size: 5.2rem;
+  text-align: center;
+  /* Alinha o texto no centro */
+  word-wrap: break-word;
+  /* Garante que o texto vai quebrar corretamente */
+  overflow-wrap: break-word;
+  /* Garante que o texto quebra em palavras longas */
+}
+
+/* Parágrafo dentro do banner */
+.banner-text p {
+  z-index: 1;
+  color: var(--primary-text-dark);
+  font-size: 1.6rem;
+  text-align: center;
+  /* Centraliza horizontalmente */
+  max-width: 100%;
+  /* Permite que o parágrafo se ajuste automaticamente à largura disponível */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+  width: auto;
+  /* Remove largura fixa, permitindo adaptação */
+  word-wrap: break-word;
+  /* Garante que o texto quebre corretamente */
+  overflow-wrap: break-word;
+  /* Garante a quebra de palavras longas */
+}
+
+/* Para elementos secundários como botões */
+#themeMode {
+  color: var(--primary-text-dark);
+  border: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Adicionando efeito para a troca de tema */
+[data-theme="light"] button {
+  background-color: var(--secondary-color-light);
+  color: var(--primary-text-light);
+}
+
+[data-theme="light"] button:hover {
+  background-color: var(--accent-color-light);
+}
+
+
+
+
+
+
+
+
+/* ---------- LAYOUT DO CSS RESPONVIO */
+
+
+
+/* Extra pequeno (até 199px) */
+@media (max-width: 199px) {
+  body {
+    background-color: red;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+
+  .menu-mobile {
+    margin-top: 40px;
+  }
+
+  .tecnologias {
+    padding: 20px
+  }
+
+  /* Banner principal */
+  .banner-text {
+    font-size: 3.4rem;
+    word-break: break-all
+  }
+
+  .banner-text p {
+    font-size: 1.1rem;
+    padding: 20x;
+    text-align: left;
+    max-width: 90%;
+    word-break: normal;
+  }
+}
+
+/* Pequeno (200px até 399px) */
+@media (min-width: 200px) and (max-width: 399px) {
+  body {
+    background-color: orange;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+
+  .menu-mobile {
+    margin-top: 40px;
+  }
+
+  .tecnologias {
+    padding: 20px
+  }
+
+  /* Banner principal */
+  .banner-text {
+    font-size: 3.4rem;
+  }
+
+  .banner-text p {
+    font-size: 1.1rem;
+    padding: 20x;
+    text-align: left;
+    max-width: 90%;
+  }
+
+}
+
+/* Médio (400px até 599px) */
+@media (min-width: 400px) and (max-width: 599px) {
+  body {
+    background-color: yellow;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+
+ /* Banner principal */
+ .banner-text {
+  font-size: 3.4rem;
+}
+
+.banner-text p {
+  font-size: 1.1rem;
+  padding: 20x;
+  text-align: left;
+  max-width: 70%;
+}
+}
+
+/* Grande (600px até 799px) */
+@media (min-width: 600px) and (max-width: 799px) {
+  body {
+    background-color: green;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+   /* Banner principal */
+   .banner-text {
+    font-size: 3.4rem;
+  }
+
+  .banner-text p {
+    font-size: 1.1rem;
+    padding: 20x;
+    text-align: left;
+    max-width: 70%;
+  }
+}
+
+/* Extra grande (800px até 900px) */
+@media (min-width: 800px) and (max-width: 900px) {
+  body {
+    background-color: blue;
+  }
+
+}
